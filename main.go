@@ -4,15 +4,19 @@ import (
     "bufio"
     "fmt"
     "os"
+    "strconv"
     "strings"
 )
 
 func main() {
     r := bufio.NewReader(os.Stdin)
-    line, _ := r.ReadString('\n')
-    line = strings.TrimRight(line, "\r\n")
-		upperLine := strings.ToUpper(line)
-		fmt.Println(upperLine)
-    _ = fmt.Sprint
+    name, _ := r.ReadString('\n')
+    name = strings.TrimRight(name, "\r\n")
+    ageStr, _ := r.ReadString('\n')
+    ageStr = strings.TrimRight(ageStr, "\r\n")
+    age, _ := strconv.Atoi(ageStr)
+		fmt.Printf("Hi, %s! You are %d years old.\n", name, age)
+    _ = age
+    _ = fmt.Print
 }
 
